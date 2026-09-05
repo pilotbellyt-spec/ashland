@@ -16,7 +16,7 @@ Note: the second command signs you out.
 
 ## Keybinds
 
-All chords are Search+Shift.
+All keybinds are Search+Shift.
 
 | Chord | Action |
 | --- | --- |
