@@ -56,7 +56,7 @@ ashland quit
 
 ## Known issues
 
-- ashland works Chrome and PWA windows only.
+- ashland works on Chrome and PWA windows only.
 
 ## Config
 
