@@ -18,7 +18,7 @@ Note: the second command signs you out.
 
 All keybinds are Search+Shift.
 
-| Chord | Action |
+| Keybind | Action |
 | --- | --- |
 | Enter | spawn window |
 | Q | kill window |
