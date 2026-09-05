@@ -32,8 +32,6 @@ def _split(r: Rect, ratio: float, min_w: int, min_h: int):
 
 
 def dwindle(area: Rect, n: int, ratio: float = 0.5, min_w: int = 1, min_h: int = 1) -> list[Rect]:
-    """Splitting the largest pane, not the newest: a strict spiral quarters the
-    width and dead-ends at 4 windows against a 500px floor at any screen size."""
     leaves = [Rect(*area)]
     while len(leaves) < n:
         i = max((i for i, r in enumerate(leaves) if _split(r, ratio, min_w, min_h)),
@@ -75,7 +73,7 @@ def grid(area: Rect, n: int, min_w: int = 1, min_h: int = 1) -> list[Rect]:
 def compute(name: str, area: Rect, n: int, *, gaps_in: int = 6, gaps_out: int = 12,
             master_ratio: float = 0.55, dwindle_ratio: float = 0.5,
             min_w: int = 1, min_h: int = 1) -> list[Rect]:
-    """Gapped rects for up to `n` windows. Returns fewer when they cannot all fit."""
+    # Gapped rects for up to `n` windows. Returns fewer when they cannot all fit.
     if name not in LAYOUT_NAMES:
         raise ValueError(f"unknown layout {name!r} (have {LAYOUT_NAMES})")
     if n <= 0:
