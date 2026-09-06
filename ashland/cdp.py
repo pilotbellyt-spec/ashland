@@ -41,7 +41,7 @@ class CDP:
         sock = socket.create_connection((self.host, self.port), timeout=5)
         sock.sendall(
             f"GET {path} HTTP/1.1\r\nHost: {self.host}:{self.port}\r\n"
-            f"Origin: http://{self.host}:{self.port}\r\n"
+            f"Origin: {self.host}\r\n"
             "Upgrade: websocket\r\nConnection: Upgrade\r\n"
             f"Sec-WebSocket-Key: {base64.b64encode(os.urandom(16)).decode()}\r\n"
             "Sec-WebSocket-Version: 13\r\n\r\n".encode())
