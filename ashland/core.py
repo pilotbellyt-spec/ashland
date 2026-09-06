@@ -83,7 +83,7 @@ class WindowManager:
         for t in self.cdp.send("Target.getTargets")["targetInfos"]:
             if t["type"] not in ("page", "app"):
                 continue
-            if t["url"].startswith(("devtools://", "chrome-extension://")):
+            if not t["url"] or t["url"].startswith(("devtools://", "chrome-extension://")):
                 continue
             try:
                 r = self.cdp.send("Browser.getWindowForTarget", {"targetId": t["targetId"]})
