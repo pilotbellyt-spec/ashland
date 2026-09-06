@@ -50,7 +50,7 @@ ashland movewin left
 ashland float
 ashland gaps 8 16          # inner, outer
 ashland masterratio +0.05
-ashland workarea           # re-probe the display and retile
+ashland workarea           # re-scan the display and retile
 ashland quit
 ```
 
